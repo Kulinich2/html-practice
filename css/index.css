@@ -1,8 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
 
+h1, h2, p, a {
+     margin: 0;
+    padding: 0;
+}
 :root {
     font-family: 'Open Sans', sans-serif;
+    --main-color: black;
+    --accent-color: rgb(50, 206, 211);
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 980px;
+    margin: auto
 }
 .logo {
     font-family: 'Libre Baskerville', serif;
@@ -15,29 +27,57 @@
     background-size: cover;
     background-position: center;
     min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }    
+.banner h1 { 
+    font-family: 'Libre Baskerville', serif;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-style: italic;
+}
+#burger-checkbox {
+    display: none;
+}
+.burger-icon {
+    font-size: 3rem;
+}
 .menu a {
     display: block;
     text-decoration: none;
     text-transform: uppercase;
-    color: #2260a8;
+    color: var(--main-color);
     border: 1px solid transparent;
-    width: 200px;
-    border: 1px solid transparent;
-   }
+    padding: 3px;
+}
+.selected {
+    font-weight: bold;
+}
    
 .menu a:hover {
     /* border-color: blue; */
     font-weight: bold;
-
 }
+@media (min-width: 650px){
 
+    header nav {
+        display: flex;
+    }    
+        header nav .menu {
+            display: flex;
+            flex: 1;
+            justify-content: space-arround;
+            align-items: center;
+    }
+}
 h1 {
     color: red;
 }
 
 .product-card img {
-    max-width: 200px;
+    max-width: 100%;
     display: block;
     margin: auto;
 }
@@ -50,4 +90,62 @@ h1 {
     border: 1px solid black;
     margin: 10px;
     padding: 5px;
+}
+.product-card .buttons {
+    display: flex;
+    justify-content: space-around;
+
+}
+@media (min-width: 600px){
+    .product-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);   
+    }
+}
+ @media (min-width: 900px){
+    .product-list {
+     display: grid;
+    grid-template-columns: repeat(3, 1fr);   
+    }
+ }
+ @media (min-width: 980px) {
+    .product-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+footer form label {
+    display: inline-block;
+    min-width: 120px;
+}   
+footer .video {
+    width: 100%;
+    border: none;
+    min-height: 600px;
+}
+    /* Controls */
+
+.button {
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #FFFFFF;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.7s;
+    background-color: transparent;
+}
+.button:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.card-button {
+    border-color: black;
+    color: black;
+}
+
+.card-button:hover {
+    background-color: black;
+    color: white;
 }
